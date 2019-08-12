@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: linear-gradient(to right,darkgray,gray,darkgray);
+}
+.center{
+  display: flex;
+  justify-content: center;
+}
+
+.particles{
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  z-index: -1;
+}
+
+.position{
+  margin-top: -80px ;
+  margin-left: 30px;
+}
