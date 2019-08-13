@@ -1,6 +1,6 @@
 {
   "name": "face-detector",
-  "homepage": "http://saravna.github.io/face-detector"
+  "homepage": "http://saravna.github.io/face-detector",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
