@@ -23,7 +23,8 @@ class Register extends React.Component{
     }
 
     onSubmitChange = () =>{
-        fetch('https://face-detect1.herokuapp.com/register', {
+        var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        fetch(proxyUrl+'https://face-detect1.herokuapp.com/register', {
             method : 'POST',
             headers : {'content-type' : 'application/json'},
             body : JSON.stringify({
@@ -34,7 +35,6 @@ class Register extends React.Component{
         })
         .then(response => response.json())
         .then(user => {
-            console.log(user);
             if(user.id){
                 this.props.loadUser(user);
                 this.props.onRouteChange('home');

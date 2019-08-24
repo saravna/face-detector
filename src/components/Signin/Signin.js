@@ -17,13 +17,14 @@ class Signin extends React.Component{
     }
 
     onSubmitSignIn = () => {
-        fetch('https://face-detect1.herokuapp.com/signin', {
+        var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        fetch(proxyUrl+'https://face-detect1.herokuapp.com/signin', {
             method : 'POST',
             headers : {'content-type' : 'application/json'},
             body : JSON.stringify({
                 email : this.state.signInEmail,
                 password : this.state.signInPassword
-            })
+            }),
         })
         .then(response => response.json())
         .then(user => {

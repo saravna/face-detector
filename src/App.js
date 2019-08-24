@@ -91,7 +91,8 @@ class App extends Component{
 
   onSubmitClick = () => {
     this.setState({imageUrl : this.state.input});
-      fetch('https://face-detect1.herokuapp.com/apicall', {
+    var proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+      fetch(proxyUrl+'https://face-detect1.herokuapp.com/apicall', {
             method : 'POST',
             headers : {'content-type' : 'application/json'},
             body : JSON.stringify({
@@ -103,7 +104,8 @@ class App extends Component{
         if(response.outputs){
           response = response.outputs[0].data.regions;
           this.calculateFaceLocation(response);
-          fetch('https://face-detect1.herokuapp.com/image', {
+          
+          fetch(proxyUrl+'https://face-detect1.herokuapp.com/image', {
             method : 'PUT',
             headers : {'content-type' : 'application/json'},
             body : JSON.stringify({
